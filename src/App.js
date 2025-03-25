@@ -52,6 +52,20 @@ function App() {
 		setFilteredProducts(filtered)
 	}
 
+	// Функция для возврата на главную страницу из любого раздела
+	const goToHomePage = () => {
+		// Сбрасываем все состояния, чтобы вернуться на главную
+		setSelectedProduct(null)
+		setSelectedCategory(null)
+		setShowFavorites(false)
+		setFilteredProducts(products)
+		// Скролл в начало страницы
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth',
+		})
+	}
+
 	// Функция для выбора категории
 	const handleCategorySelect = categoryName => {
 		setSelectedCategory(categoryName)
@@ -103,6 +117,7 @@ function App() {
 				favoritesCount={favorites.length}
 				darkMode={darkMode}
 				toggleDarkMode={() => setDarkMode(!darkMode)}
+				goToHomePage={goToHomePage}
 			/>
 			<main className='main-content'>
 				{showFavorites ? (

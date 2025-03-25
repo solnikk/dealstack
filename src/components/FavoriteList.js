@@ -1,12 +1,21 @@
 // src/components/FavoriteList.js
-import React from 'react'
+import React, { useEffect } from 'react'
 import ProductCard from './ProductCard'
+import { FaArrowLeft } from 'react-icons/fa'
 
 function FavoriteList({ products, toggleFavorite, onClose, onSelectProduct }) {
+	// Добавляем эффект для скролла страницы наверх при монтировании компонента
+	useEffect(() => {
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth',
+		})
+	}, [])
+
 	return (
 		<div className='products-container'>
 			<button className='back-button small' onClick={onClose}>
-				← Назад
+				<FaArrowLeft /> <span>Назад</span>
 			</button>
 			<h2>Ваши избранные товары ({products.length})</h2>
 			<div className='product-list'>

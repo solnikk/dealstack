@@ -1,6 +1,6 @@
 import React from 'react'
 import ProductCard from './ProductCard'
-
+import { FaArrowLeft } from 'react-icons/fa'
 function ProductList({
 	products,
 	onBack,
@@ -11,7 +11,7 @@ function ProductList({
 	return (
 		<div className='products-container'>
 			<button className='back-button small' onClick={onBack}>
-				← Назад
+				<FaArrowLeft /> <span>Назад</span>
 			</button>
 			<div className='product-list'>
 				{products.length > 0 ? (

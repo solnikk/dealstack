@@ -1,5 +1,11 @@
 import React from 'react'
-import { FaTelegram, FaVk, FaInstagram, FaEnvelope } from 'react-icons/fa'
+import {
+	FaTelegram,
+	FaVk,
+	FaInstagram,
+	FaEnvelope,
+	FaGithub,
+} from 'react-icons/fa'
 
 function Footer() {
 	return (
@@ -8,10 +14,9 @@ function Footer() {
 				<div className='footer-section'>
 					<h3>О DealStack</h3>
 					<p>
-						DealStack - это современный сервис для сравнения цен на электронику.
-						Мы помогаем пользователям находить лучшие предложения на рынке,
-						отслеживать изменения цен и принимать информированные решения при
-						покупке.
+						DealStack - современный сервис для сравнения цен на электронику. Мы
+						помогаем пользователям находить лучшие предложения на рынке и
+						принимать информированные решения при покупке.
 					</p>
 				</div>
 
@@ -24,7 +29,7 @@ function Footer() {
 							rel='noopener noreferrer'
 							className='contact-link'
 						>
-							<FaTelegram /> Telegram
+							<FaTelegram /> <span>Telegram</span>
 						</a>
 						<a
 							href='https://vk.com/kolyaasolo'
@@ -32,7 +37,7 @@ function Footer() {
 							rel='noopener noreferrer'
 							className='contact-link'
 						>
-							<FaVk /> VK
+							<FaVk /> <span>VK</span>
 						</a>
 						<a
 							href='https://instagram.com/kolyaasolo'
@@ -40,19 +45,27 @@ function Footer() {
 							rel='noopener noreferrer'
 							className='contact-link'
 						>
-							<FaInstagram /> Instagram
+							<FaInstagram /> <span>Instagram</span>
 						</a>
 						<a
 							href='mailto:solodovnikov.2003@gmail.com'
 							className='contact-link'
 						>
-							<FaEnvelope /> solodovnikov.2003@gmail.com
+							<FaEnvelope /> <span>solodovnikov.2003@gmail.com</span>
+						</a>
+						<a
+							href='https://github.com/kolyasolo'
+							target='_blank'
+							rel='noopener noreferrer'
+							className='contact-link'
+						>
+							<FaGithub /> <span>GitHub</span>
 						</a>
 					</div>
 				</div>
 			</div>
 			<div className='footer-bottom'>
-				<p>&copy; 2025 DealStack. Все права защищены.</p>
+				<p>&copy; {new Date().getFullYear()} DealStack. Все права защищены.</p>
 			</div>
 		</footer>
 	)

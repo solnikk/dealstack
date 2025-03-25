@@ -1,25 +1,43 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
-  "icons": [
-    {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "logo192.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "logo512.png",
-      "type": "image/png",
-      "sizes": "512x512"
-    }
-  ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+	"short_name": "DealStack",
+	"name": "DealStack - Сравнение цен на электронику",
+	"icons": [
+		{
+			"src": "favicon.ico",
+			"sizes": "64x64 32x32 24x24 16x16",
+			"type": "image/x-icon"
+		},
+		{
+			"src": "logo192.png",
+			"type": "image/png",
+			"sizes": "192x192",
+			"purpose": "any maskable"
+		},
+		{
+			"src": "logo512.png",
+			"type": "image/png",
+			"sizes": "512x512",
+			"purpose": "any maskable"
+		}
+	],
+	"start_url": ".",
+	"display": "standalone",
+	"theme_color": "#6200ea",
+	"background_color": "#ffffff",
+	"orientation": "portrait",
+	"scope": "/",
+	"description": "Сервис для сравнения цен на электронику. Находите лучшие предложения на рынке и отслеживайте изменения цен.",
+	"categories": ["shopping", "utilities"],
+	"lang": "ru",
+	"dir": "ltr",
+	"prefer_related_applications": false,
+	"shortcuts": [
+		{
+			"name": "Избранное",
+			"short_name": "Избранное",
+			"description": "Просмотр избранных товаров",
+			"url": "/favorites",
+			"icons": [{ "src": "favorites.png", "sizes": "192x192" }]
+		}
+	]
 }

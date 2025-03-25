@@ -11,19 +11,19 @@ function ProductCard({ product, onSelectProduct, isFavorite, toggleFavorite }) {
 		<div className='product-card' onClick={() => onSelectProduct?.(product)}>
 			<div className='image-container'>
 				<img src={product.image} alt={product.name} className='product-image' />
-				<button
-					className='favorite-button'
-					onClick={e => {
-						e.stopPropagation()
-						toggleFavorite(product.id)
-					}}
-					aria-label={
-						isFavorite ? 'Удалить из избранного' : 'Добавить в избранное'
-					}
-				>
-					{isFavorite ? <FaHeart className='filled' /> : <FaRegHeart />}
-				</button>
 			</div>
+			<button
+				className='favorite-button'
+				onClick={e => {
+					e.stopPropagation()
+					toggleFavorite(product.id)
+				}}
+				aria-label={
+					isFavorite ? 'Удалить из избранного' : 'Добавить в избранное'
+				}
+			>
+				{isFavorite ? <FaHeart className='filled' /> : <FaRegHeart />}
+			</button>
 			<div className='product-info'>
 				<h3>{product.name}</h3>
 				<p>{product.description}</p>

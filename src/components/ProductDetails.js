@@ -1,7 +1,7 @@
 // src/components/ProductDetails.js
 import React, { useState, useEffect } from 'react'
 import ReviewForm from './ReviewForm'
-import { FaStar } from 'react-icons/fa'
+import { FaStar, FaArrowLeft } from 'react-icons/fa'
 
 function ProductDetails({ product, onClose }) {
 	const [reviews, setReviews] = useState(product.reviews)
@@ -20,7 +20,7 @@ function ProductDetails({ product, onClose }) {
 	return (
 		<div className='product-details'>
 			<button className='back-button small' onClick={onClose}>
-				← Назад
+				<FaArrowLeft /> <span>Назад</span>
 			</button>
 			<div className='product-details-container'>
 				<div className='product-details-left'>
@@ -77,7 +77,7 @@ function ProductDetails({ product, onClose }) {
 									className='review-avatar'
 								/>
 								<div className='review-content'>
-									<strong>{review.user || 'Anonymous'}</strong>
+									<strong>{review.user || 'Аноним'}</strong>
 									<p>{review.text}</p>
 									<div className='review-rating-stars'>
 										{[1, 2, 3, 4, 5].map(star => (
@@ -93,7 +93,7 @@ function ProductDetails({ product, onClose }) {
 							</div>
 						))
 					) : (
-						<p>Нет отзывов о товаре.</p>
+						<p className='no-reviews'>Нет отзывов о товаре. Будьте первым!</p>
 					)}
 				</div>
 				<ReviewForm onAddReview={addReview} />
