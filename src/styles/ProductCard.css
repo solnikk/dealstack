@@ -1,25 +1,3 @@
-:root {
-	--primary-color: #4372ac; /* Фиолетовый */
-	--secondary-color: #3700b3; /* Темно-фиолетовый */
-	--accent-color: #ff9000; /* Оранжевый */
-	--background-color: #f9fafb; /* Светлый фон */
-	--text-color: #333333; /* Темный текст */
-	--font-family: 'Roboto', sans-serif;
-	--text-color-on-primary: #616161;
-	--success-color: #66bb6a;
-	--hover-color: #fda93c;
-}
-
-[data-theme='dark'] {
-	--primary-color: #6f42c1;
-	--secondary-color: #543292;
-	--accent-color: #ffab40;
-	--background-color: #212121;
-	--text-color: #e0e0e0;
-	--surface-color: #2c2c2c;
-	--border-color: #373737;
-	--hover-color: #ffb759;
-}
 
 .product-card {
 	background-color: var(--surface-color);
