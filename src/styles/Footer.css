@@ -27,7 +27,7 @@
 .footer-section p {
 	color: rgb(255, 255, 255) !important;
 	line-height: 1.6;
-	opacity: 0.9;
+	font-size: 17px;
 }
 
 .contact-links {
@@ -50,7 +50,7 @@
 }
 
 .contact-link svg {
-	font-size: 1.2rem;
+	font-size: 20px;
 }
 
 .footer-bottom {
@@ -63,7 +63,7 @@
 .footer-bottom p {
 	color: white;
 	opacity: 0.8;
-	font-size: 0.9rem;
+	font-size: 17px;
 }
 
 @media (max-width: 1200px) {
@@ -95,7 +95,7 @@
 	}
 
 	.footer-section h3 {
-		font-size: 1.2rem;
+		font-size: 20px;
 	}
 
 	.contact-links {
@@ -123,7 +123,7 @@
 	}
 
 	.contact-link span {
-		font-size: 0.7rem;
+		font-size: 17px;
 		display: block;
 		overflow: hidden;
 		text-overflow: ellipsis;
