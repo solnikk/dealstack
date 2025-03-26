@@ -34,6 +34,14 @@ function ProductDetails({ product, onClose }) {
 					<div className='product-details-header'>
 						<h2>{product.name}</h2>
 						<p className='product-details-description'>{product.description}</p>
+						<div className='product-details-quick-specs'>
+							<h3>Характеристики:</h3>
+							<ul className='quick-specifications-list'>
+								{product.specifications.map((spec, index) => (
+									<li key={index}>{spec}</li>
+								))}
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -54,15 +62,6 @@ function ProductDetails({ product, onClose }) {
 						</a>
 					))}
 				</div>
-			</div>
-
-			<div className='product-details-specs'>
-				<h3>Характеристики:</h3>
-				<ul className='specifications-list'>
-					{product.specifications.map((spec, index) => (
-						<li key={index}>{spec}</li>
-					))}
-				</ul>
 			</div>
 
 			<div className='product-details-reviews'>

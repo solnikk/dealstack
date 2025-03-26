@@ -1,21 +1,21 @@
-@import url("variables.css");
+@import url('variables.css');
 
 /* .favorite-list {
 	margin-top: 20px;
 } */
 
 .favorites-button {
-  padding: 12px 20px;
-  background-color: white;
-  color: black;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+	padding: 12px 20px;
+	background-color: white;
+	color: black;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
 }
 
 .favorites-button:hover {
-  background: rgba(255,255,255,0.1);
+	background: rgba(255, 255, 255, 0.1);
 }
 
 .favorites-button {
@@ -30,6 +30,7 @@
 	align-items: center;
 	gap: 5px;
 	position: relative;
+	-webkit-tap-highlight-color: transparent; /* Убираем подсветку при тапе на iOS */
 }
 
 .favorites-icon-wrapper {
@@ -141,11 +142,8 @@
 	animation: float 3s ease-in-out infinite;
 }
 
-
-
-
 @media (max-width: 768px) {
-  .favorites-button {
+	.favorites-button {
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -153,12 +151,13 @@
 		margin-right: 5px;
 	}
 
-  .favorites-icon {
-		width: 16px;
-		height: 16px;
+	.favorites-icon {
+		width: 20px;
+		height: 20px;
+		font-size: 20px;
 	}
 
-  .favorites-badge {
+	.favorites-badge {
 		position: absolute;
 		top: -5px;
 		right: -5px;
@@ -173,44 +172,26 @@
 		justify-content: center;
 	}
 
-  .favorites-label {
+	.favorites-label {
 		display: none;
 	}
 
-  .favorites-icon-wrapper {
+	.favorites-icon-wrapper {
 		position: relative;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 	}
 
-  .favorites-icon {
-		width: 16px;
-		height: 16px;
-	}
-
-   .favorites-button {
+	.favorites-button {
 		padding: 5px;
 	}
 
 	.favorites-label {
 		display: none;
-	} 
-
-   .favorites-icon-wrapper {
-		position: relative;
-		display: flex;
-		align-items: center;
-		justify-content: center;
 	}
 
-	.favorites-icon {
-		width: 20px;
-		height: 20px;
-		color: white;
-	} 
-
-  .empty-state {
+	.empty-state {
 		padding: 30px 15px;
 	}
 
@@ -222,5 +203,45 @@
 	.empty-state p {
 		font-size: 0.9rem;
 		opacity: 0.8;
+	}
+}
+
+/* Специальные стили для Safari на iOS */
+@supports (-webkit-touch-callout: none) {
+	/* Это правило применяется только для iOS Safari */
+	.favorites-icon {
+		/* Немного увеличиваем размер для компенсации масштабирования в Safari */
+		font-size: 26px;
+		width: auto;
+		height: auto;
+		/* Добавляем хак для более четкого отображения в iOS Safari */
+		transform-origin: center center;
+		backface-visibility: hidden;
+		-webkit-font-smoothing: antialiased;
+	}
+
+	@media (max-width: 768px) {
+		.favorites-icon {
+			font-size: 24px;
+			width: 24px;
+			height: 24px;
+			/* Предотвращаем масштабирование SVG в Safari */
+			transform: scale(1.2);
+		}
+
+		.favorites-icon-wrapper {
+			/* Убеждаемся, что контейнер имеет достаточный размер */
+			min-width: 24px;
+			min-height: 24px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.favorites-button {
+			padding: 8px;
+			min-width: 40px;
+			min-height: 40px;
+		}
 	}
 }
