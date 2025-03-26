@@ -41,7 +41,7 @@ body {
 	}
 
 	.logo-section h1 {
-		font-size: 1rem;
+		font-size: 2rem;
 		margin: 0 0 0 10px;
 		display: flex;
 		align-items: center;
@@ -65,38 +65,66 @@ body {
 		top: 100%;
 		left: 0;
 		right: 0;
-		display: none;
+		max-height: 0;
+		overflow: hidden;
+		opacity: 0;
+		display: flex;
 		flex-direction: column;
-		padding: 15px 10px;
 		background: var(--primary-color);
 		gap: 10px;
 		z-index: 999;
 		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 		box-sizing: border-box;
 		width: 100%;
+		transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+		padding: 0 10px;
 	}
 
 	.search-form.active {
-		display: flex;
+		max-height: 300px;
+		opacity: 1;
+		padding: 15px 10px;
 	}
 
 	.search-input,
 	.search-select {
 		width: 100%;
-		padding: 10px;
-		border: none;
-		border-radius: 4px;
 		box-sizing: border-box;
+		transform: translateY(-10px);
+		opacity: 0;
+		transition: transform 0.3s ease, opacity 0.3s ease;
+	}
+
+	.search-form.active .search-input,
+	.search-form.active .search-select,
+	.search-form.active .search-button {
+		transform: translateY(0);
+		opacity: 1;
 	}
 
 	.search-button {
 		width: 100%;
-		padding: 10px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		gap: 5px;
-		box-sizing: border-box;
+		transform: translateY(-10px);
+		opacity: 0;
+		transition: transform 0.3s ease, opacity 0.3s ease,
+			background-color 0.3s ease;
+	}
+
+	/* Добавляем задержку для каждого элемента, чтобы они появлялись последовательно */
+	.search-input {
+		transition-delay: 0.1s;
+	}
+
+	.search-select:nth-of-type(1) {
+		transition-delay: 0.2s;
+	}
+
+	.search-select:nth-of-type(2) {
+		transition-delay: 0.3s;
+	}
+
+	.search-button {
+		transition-delay: 0.4s;
 	}
 
 	.category-carousel-wrapper {
@@ -329,24 +357,70 @@ body {
 /* Мобильная адаптация */
 @media (max-width: 768px) {
 	.search-form {
-		display: none;
 		position: absolute;
 		top: 100%;
 		left: 0;
 		right: 0;
-		background: var(--primary-color);
-		padding: 10px;
+		max-height: 0;
+		overflow: hidden;
+		opacity: 0;
+		display: flex;
 		flex-direction: column;
-		gap: 8px;
+		background: var(--primary-color);
+		gap: 10px;
+		z-index: 999;
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+		box-sizing: border-box;
+		width: 100%;
+		transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+		padding: 0 10px;
 	}
 
 	.search-form.active {
-		display: flex;
+		max-height: 300px;
+		opacity: 1;
+		padding: 15px 10px;
 	}
 
 	.search-input,
 	.search-select {
 		width: 100%;
+		box-sizing: border-box;
+		transform: translateY(-10px);
+		opacity: 0;
+		transition: transform 0.3s ease, opacity 0.3s ease;
+	}
+
+	.search-form.active .search-input,
+	.search-form.active .search-select,
+	.search-form.active .search-button {
+		transform: translateY(0);
+		opacity: 1;
+	}
+
+	.search-button {
+		width: 100%;
+		transform: translateY(-10px);
+		opacity: 0;
+		transition: transform 0.3s ease, opacity 0.3s ease,
+			background-color 0.3s ease;
+	}
+
+	/* Добавляем задержку для каждого элемента, чтобы они появлялись последовательно */
+	.search-input {
+		transition-delay: 0.1s;
+	}
+
+	.search-select:nth-of-type(1) {
+		transition-delay: 0.2s;
+	}
+
+	.search-select:nth-of-type(2) {
+		transition-delay: 0.3s;
+	}
+
+	.search-button {
+		transition-delay: 0.4s;
 	}
 }
 
