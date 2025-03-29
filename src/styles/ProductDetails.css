@@ -1,7 +1,7 @@
 @import url('variables.css');
 
 @media (max-width: 768px) {
-	.product-details {
+  .product-details {
 		padding-top: 80px !important;
 		padding-bottom: 20px !important;
 		padding-left: 15px !important;
@@ -13,7 +13,7 @@
 	.product-details .product-details-container {
 		flex-direction: column !important;
 		gap: 20px !important;
-		padding: 15px !important;
+		/*padding: 15px !important;*/
 		margin-top: 20px !important;
 		border-radius: 8px !important;
 		overflow: hidden !important;
@@ -189,7 +189,7 @@
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
-	.product-details-container {
+  .product-details-container {
 		flex-direction: row;
 		gap: 24px;
 	}
@@ -495,7 +495,7 @@
 
 .reviews {
 	width: 100%;
-	margin-top: 20px;
+  margin-top: 20px;
 }
 
 .review-item {
@@ -655,7 +655,7 @@
 	transition: border-color 0.3s ease;
 	background-color: var(--review--background-color);
 	color: var(--text-color);
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .review-input:focus,
